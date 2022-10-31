@@ -9,6 +9,7 @@ python-decouple==3.6
 sqlparse==0.4.3
 whitenoise==6.2.0
 django-tinymce==3.5.0
+django-mptt==0.14.0
 
 
 
