@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/x-icon" href="{% static 'website/favicon.ico' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+	<title>
+		{% block title %}
+			Untitled Document
+		{% endblock title %}
+	</title>
+</head>
+<body>
+	<!-- Responsive navbar-->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'home' %}">Dento - karate</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+
+						{% block nav %}
+							{% for category in parents %}
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="{{ category.slug }}">{{ category.name }}</a>
+						</li>
+							{% endfor %}
+						{% endblock nav %}
+
+						<li class="nav-item"><a class="nav-link" href="#!">Akce</a></li>
+						<li class="nav-item"><a class="nav-link" href="#!">Galerie</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1600x900')">
+            <div class="text-center my-5">
+                <h1 class="text-white fs-3 fw-bolder">Full Width Pics</h1>
+                <p class="text-white-50 mb-0">Landing Page Template</p>
+            </div>
+        </header>
+        <!-- Content section-->
+
+	{% block content %}
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Dento Karate-Do</h2>
+                        <p class="lead"><strong>Dento Karate-do</strong> je uměním všestranného harmonického rozvoje jedince prostřednictvím
+							opravdového studia techniky, je cestou hledání absolutní pravdy prostřednictvím fyzické praxe.
+							Hledání vývoje cestou studia Dento Karate-do nemá žádných hranic.
+						</p>
+						<p class="lead">
+							<strong>DENTO KARATE-DO</strong> – „Cesta prázdné ruky“ je staré okinawské bojové umění.
+							Důležitým datem pro vývoj KARATE-DO a Okinawy vůbec byl rok 1609, ve kterém začala okupace
+							Okinawy Japonci (klanem Satsuma). Karate-do a Kobudo se staly jedinými zbraněmi v rukou
+							Okinawanů v boji proti dobře vyzbrojeným a vycvičeným okupantům, Satsuma samurajům.
+						</p>
+						<p class="lead">
+							Díky těmto podmínkám se Karate-do vyvinulo v efektivní bojové umění. DENTO KARATE-DO používá
+							lidské tělo k tomu, aby prostřednictvím technik sebeobrany, umožnilo dosáhnout optimálního
+							psychického a fyzického rozvoje jedince. Techniky tradičního KARATE spočívají v zaměření se
+							na psychickou a fyzickou kontrolu těla a na schopnost koncentrace celkové tělesné síly.
+							Využívá zejména bloky, údery, seky a kopy, ale také techniky páčení, škrcení a hodů v
+							kombinaci s jinými příbuznými pohyby.
+							Cestou hledání lepší techniky rozšiřuje člověk svoje schopnosti ve všech směrech. Hledání
+							vývoje cestou tradičního KARATE nemá žádných hranic.
+						</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+	{% endblock content %}
+
+
